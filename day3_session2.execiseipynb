@@ -1,0 +1,227 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled10.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyMeUBy9Va8+M7alBSeOgs6L",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/nmdnaveenkumar/python-workshop/blob/master/day3_session2.execiseipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "TaFfmWo9IA7D",
+        "colab_type": "text"
+      },
+      "source": [
+        "Write a Python Program to Print Multiplication Table of a number which got through keyboard"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "M1hjD5-1IDK-",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        },
+        "outputId": "bd0d1040-4ed2-4dee-c8b8-6592241c7e68"
+      },
+      "source": [
+        "a=[]\n",
+        "n=int(input(\"enter the value of n\"))\n",
+        "for i in range(1,11):\n",
+        "  b=i*n\n",
+        "  a.append(str(b))\n",
+        "print(','.join(a))\n"
+      ],
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "enter the value of n3\n",
+            "3,6,9,12,15,18,21,24,27,30\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6DxDAPweISnG",
+        "colab_type": "text"
+      },
+      "source": [
+        "\n",
+        "Write a Python Program to find the Armstrong Numbers between 1 and 2000"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2Gx7qz9uIW3d",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        },
+        "outputId": "2aa0f9a0-a99c-4cf6-a4d8-c3d415e5cc1c"
+      },
+      "source": [
+        "a=[]\n",
+        "for i in range(1,2001):\n",
+        " temp=i\n",
+        " d=0\n",
+        " l=0\n",
+        " s=0\n",
+        " while(temp>0):\n",
+        "  temp=temp//10\n",
+        "  d=d+1\n",
+        " temp=i\n",
+        " while(temp>0):\n",
+        "  l=temp%10\n",
+        "  s=s+l**d\n",
+        "  temp=temp//10\n",
+        " if(s==i):\n",
+        "  a.append(str(i))\n",
+        "print(a)"
+      ],
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "['1', '2', '3', '4', '5', '6', '7', '8', '9', '153', '370', '371', '407', '1634']\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "7Hb77o3oIcjg",
+        "colab_type": "text"
+      },
+      "source": [
+        "Write a python program to get the list of tuples (rollno, name) for n students by getting rollno and name through keyboard. Sort and print them as rollno wise and name wise both ascending and descending as well as alphabetical and dealphabetical orders"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "O9rMkEx1IihQ",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 255
+        },
+        "outputId": "7498bc50-4d98-44e7-fe47-0de0a4935ef1"
+      },
+      "source": [
+        "\n",
+        "a=[]\n",
+        "def inp():\n",
+        "  rolno=input(\"enter the rolno\")\n",
+        "  name=input(\"enter the name\")\n",
+        "  return(rolno,name)\n",
+        "n=int(input(\"Enter the value of n\"))\n",
+        "for i in range(1,n+1):\n",
+        "  a.append(inp())\n",
+        "print(a)\n",
+        "a.sort(key=lambda i:i[0])\n",
+        "print(f'According to Rollno:Ascending order:{a}')\n",
+        "print(f'According to Rollno:Descending order:{a[::-1]}')\n",
+        "a.sort(key=lambda i:i[1])\n",
+        "print(f'According to Name:Alphabeticallyorder:{a}')\n",
+        "print(f'According to Name:Dealphabetically order:{a[::-1]}')"
+      ],
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Enter the value of n4\n",
+            "enter the rolno 42\n",
+            "enter the namepoo\n",
+            "enter the rolno43\n",
+            "enter the namepooo\n",
+            "enter the rolno44\n",
+            "enter the namepoooo\n",
+            "enter the rolno45\n",
+            "enter the namepopopopo\n",
+            "[(' 42', 'poo'), ('43', 'pooo'), ('44', 'poooo'), ('45', 'popopopo')]\n",
+            "According to Rollno:Ascending order:[(' 42', 'poo'), ('43', 'pooo'), ('44', 'poooo'), ('45', 'popopopo')]\n",
+            "According to Rollno:Descending order:[('45', 'popopopo'), ('44', 'poooo'), ('43', 'pooo'), (' 42', 'poo')]\n",
+            "According to Name:Alphabeticallyorder:[(' 42', 'poo'), ('43', 'pooo'), ('44', 'poooo'), ('45', 'popopopo')]\n",
+            "According to Name:Dealphabetically order:[('45', 'popopopo'), ('44', 'poooo'), ('43', 'pooo'), (' 42', 'poo')]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ZMaxo3ykI3-p",
+        "colab_type": "text"
+      },
+      "source": [
+        "Python Program to Detect if Two Strings are Anagrams ( They are the two strings which have same length and same words which may be different in their order)\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rJYg9IsDI8zS",
+        "colab_type": "code",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        },
+        "outputId": "cb7e35ed-a6fb-4804-9966-60894ae41a7a"
+      },
+      "source": [
+        "s=input(\"Enter the first string\")\n",
+        "s2=input(\"Enter the second string\")\n",
+        "if(sorted(s)==sorted(s2)):\n",
+        "  print(\"Strings are anagram\")\n",
+        "else:\n",
+        "  print(\"strings arent anagram\")"
+      ],
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Enter the first stringstringsareanagram\n",
+            "Enter the second stringstrings are anagram\n",
+            "strings arent anagram\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    }
+  ]
+}
